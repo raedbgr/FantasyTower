@@ -37,5 +37,11 @@ public class PlayerMovement : MonoBehaviour {
 		// Move our character
 		controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
 		jump = false;
+		if(transform.position.y <= Camera.main.transform.position.y - 5.7)
+		{
+			Destroy(gameObject);
+		}
 	}
+
+	
 }
