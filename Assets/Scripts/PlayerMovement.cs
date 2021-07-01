@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour {
 	public CharacterController2D controller;
 
 	public float runSpeed = 30f;
+    public VariableJoystick variableJoystick;
 
 	float horizontalMove = 0f;
 	public bool jump = false;
@@ -19,13 +20,9 @@ public class PlayerMovement : MonoBehaviour {
 
 anim.SetBool("land",controller.m_Grounded);
 
-		horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+		horizontalMove =  variableJoystick.Horizontal * runSpeed;
 
-		if (Input.GetButtonDown("Jump"))
-		{
-			jump = true;
-			anim.SetBool("jump",true);
-		}
+	
 
 		/*if (Input.GetButtonDown("Crouch"))
 		{
@@ -36,7 +33,11 @@ anim.SetBool("land",controller.m_Grounded);
 		}*/
 
 	} 
-
+public void jumpEvent()
+	{
+			jump = true;
+			anim.SetBool("jump",true);
+		}
 	void FixedUpdate ()
 	{
 		// Move our character
