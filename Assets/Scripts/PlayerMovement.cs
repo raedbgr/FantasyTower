@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerMovement : MonoBehaviour {
 
 	public CharacterController2D controller;
@@ -13,6 +14,16 @@ public class PlayerMovement : MonoBehaviour {
 	public bool jump = false;
 	bool crouch = false;
 	public Animator anim;
+    public AudioClip deathSound;
+	public AudioClip jumpSound;
+	public AudioClip backgroundMusic;
+    public AudioSource audio;
+	//public AudioSource audiobg;
+
+	void Start()
+	{
+		audio = GetComponent<AudioSource>();
+	}
 
 	// Update is called once per frame
 	void Update () {
@@ -37,16 +48,20 @@ public void jumpEvent()
 	{
 			jump = true;
 			anim.SetBool("jump",true);
+			audio.PlayOneShot(jumpSound);
+
 		}
 	void FixedUpdate ()
 	{
 		// Move our character
 		controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
 		jump = false;
-
+        //when player die
 		if(transform.position.y <= Camera.main.transform.position.y - 5.7)
 		{
 			Destroy(gameObject);
+			audio.PlayOneShot(deathSound);
+
 		}
 	}
 
