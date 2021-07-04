@@ -6,6 +6,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
 
 	public CharacterController2D controller;
+	public score score;
+
 
 	public float runSpeed = 30f;
     public VariableJoystick variableJoystick;
@@ -14,15 +16,12 @@ public class PlayerMovement : MonoBehaviour {
 	public bool jump = false;
 	bool crouch = false;
 	public Animator anim;
-    public AudioClip deathSound;
-	public AudioClip jumpSound;
-	public AudioClip backgroundMusic;
-    public AudioSource audio;
-	//public AudioSource audiobg;
+	public bool jumpPressed;
+   
 
 	void Start()
 	{
-		audio = GetComponent<AudioSource>();
+		jumpPressed=false;
 	}
 
 	// Update is called once per frame
@@ -48,7 +47,7 @@ public void jumpEvent()
 	{
 			jump = true;
 			anim.SetBool("jump",true);
-			audio.PlayOneShot(jumpSound);
+			jumpPressed=true;
 
 		}
 	void FixedUpdate ()
@@ -57,11 +56,11 @@ public void jumpEvent()
 		controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
 		jump = false;
         //when player die
-		if(transform.position.y <= Camera.main.transform.position.y - 5.7)
+		if(transform.position.y <= Camera.main.transform.position.y - 5.8)
 		{
-			Destroy(gameObject);
-			audio.PlayOneShot(deathSound);
+			score.myAudioSource2.Play ();
 
+			Destroy(gameObject);
 		}
 	}
 

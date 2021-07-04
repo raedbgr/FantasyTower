@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class CameraFollower : MonoBehaviour
 {
-    public float speed = 1f;
+    public float speed;
     public float speedIncrease;
     public float speedLimit;
     public float timeToIncrease;
+    public PlayerMovement PlayerMovement;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,19 +18,21 @@ public class CameraFollower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.up * Time.deltaTime * speed);
-        if (timeToIncrease<=0f)
+        if(PlayerMovement.jumpPressed)
         {
-            if(speed<speedLimit)
-            {
-                speed+=speedIncrease;
-
-            }
-            timeToIncrease=1f;
-        }
-        else 
-        {
-            timeToIncrease-=Time.deltaTime;
+           transform.Translate(Vector3.up * Time.deltaTime * speed);
+           if (timeToIncrease<=0f)
+           {
+               if(speed<speedLimit)
+               {
+                   speed+=speedIncrease;
+               }
+               timeToIncrease=1f;
+           }
+           else 
+           {
+               timeToIncrease-=Time.deltaTime;
+           }
         }
     }
 }
