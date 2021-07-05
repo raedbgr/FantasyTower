@@ -58,8 +58,10 @@ public void jumpEvent()
         //when player die
 		if(transform.position.y <= Camera.main.transform.position.y - 5.8)
 		{
+			if(PlayerPrefs.GetInt("sfx")==1)
+			{
 			score.myAudioSource2.Play ();
-
+			}
 			Destroy(gameObject);
 		}
 	}

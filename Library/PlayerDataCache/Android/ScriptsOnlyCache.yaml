@@ -7,6 +7,7 @@ ScriptsOnlyBuild:
     - PlayerMovement
     - VariableJoystick
     - gameManager
+    - menuCameraFollower
     - score
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
@@ -56,8 +57,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
-    - Class: 49
-      Script: {instanceID: 0}
     - Class: 50
       Script: {instanceID: 0}
     - Class: 58
@@ -89,35 +88,100 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12010}
     - Class: 114
-      Script: {instanceID: 12400}
+      Script: {instanceID: 12402}
     - Class: 114
-      Script: {instanceID: 12456}
+      Script: {instanceID: 12596}
     - Class: 114
-      Script: {instanceID: 12594}
+      Script: {instanceID: 13146}
     - Class: 114
-      Script: {instanceID: 13144}
+      Script: {instanceID: 13512}
     - Class: 114
-      Script: {instanceID: 13510}
+      Script: {instanceID: 13858}
     - Class: 114
-      Script: {instanceID: 13532}
+      Script: {instanceID: 13968}
     - Class: 114
-      Script: {instanceID: 13856}
+      Script: {instanceID: 14202}
     - Class: 114
-      Script: {instanceID: 13966}
+      Script: {instanceID: 14232}
     - Class: 114
-      Script: {instanceID: 14200}
-    - Class: 114
-      Script: {instanceID: 14230}
-    - Class: 114
-      Script: {instanceID: 14272}
-    - Class: 114
-      Script: {instanceID: 14448}
-    - Class: 114
-      Script: {instanceID: 14500}
-    - Class: 114
-      Script: {instanceID: 14620}
+      Script: {instanceID: 14502}
     - Class: 114
       Script: {instanceID: 14622}
+    - Class: 114
+      Script: {instanceID: 14624}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 251
+      Script: {instanceID: 0}
+    Assets/menu.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 49
+      Script: {instanceID: 0}
+    - Class: 50
+      Script: {instanceID: 0}
+    - Class: 61
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 11338}
+    - Class: 114
+      Script: {instanceID: 11364}
+    - Class: 114
+      Script: {instanceID: 12178}
+    - Class: 114
+      Script: {instanceID: 12402}
+    - Class: 114
+      Script: {instanceID: 12458}
+    - Class: 114
+      Script: {instanceID: 13146}
+    - Class: 114
+      Script: {instanceID: 13512}
+    - Class: 114
+      Script: {instanceID: 13534}
+    - Class: 114
+      Script: {instanceID: 13968}
+    - Class: 114
+      Script: {instanceID: 14232}
+    - Class: 114
+      Script: {instanceID: 14274}
+    - Class: 114
+      Script: {instanceID: 14450}
+    - Class: 114
+      Script: {instanceID: 14624}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -355,6 +419,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: AnimationPlayableAsset
+  - hash:
+      serializedVersion: 2
+      Hash: b3bc331558642d246a0dbe85c863b250
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: menuCameraFollower
   - hash:
       serializedVersion: 2
       Hash: aba7b2852ef61d175dd9602e7723d5e5
@@ -915,5 +985,6 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   platform: 13
   scenePathNames:
+  - Assets/menu.unity
   - Assets/main game.unity
-  playerPath: C:/Users/Baha/Desktop/jumpyTower 2.0.apk
+  playerPath: C:/Users/Baha/Desktop/JumpyMumpy 0.1.apk

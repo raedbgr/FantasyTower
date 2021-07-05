@@ -55,7 +55,10 @@ public class score : MonoBehaviour
      myAudioSource2.clip = deathSound;
    //  myAudioSource2.Play ();
       myAudioSource3.clip = backgroundMusic;
+      if(PlayerPrefs.GetInt("music")==1)
+      {
      myAudioSource3.Play ();
+      }
      //and so on
  }
 
@@ -68,7 +71,10 @@ public class score : MonoBehaviour
         {
             if (CharacterController2D.m_Grounded && PlayerMovement.jump)
             {
+                if(PlayerPrefs.GetInt("sfx")==1)
+                {
                 myAudioSource1.Play ();
+                }
             }
               if(timer<=0f)
               {
